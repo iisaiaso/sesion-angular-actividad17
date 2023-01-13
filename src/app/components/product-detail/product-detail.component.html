@@ -1,0 +1,17 @@
+<!-- <p>{{id}}</p> -->
+<div *ngFor="let data of this.prodServices.productos" class="w-2/5 mx-auto bg-red-200 mt-10">
+    <div *ngIf="data[0] == this.id">
+      <div>
+        <p class="text-xl text-center">{{title | uppercase}} {{id}}</p>
+      </div>
+      <div class="inline-block">
+        <label for="cod" class="">Codigo de barras</label>
+        <input type="text" id="cod" value="{{data[0]}}" disabled>
+      </div>
+      <p>{{data[1]}}</p>
+      <p>{{data[2]}}</p>
+      <p>{{data[3]}}</p>
+      <p>{{data[4]}}</p>
+      <p>{{data[5]}}</p>
+    </div>
+</div>

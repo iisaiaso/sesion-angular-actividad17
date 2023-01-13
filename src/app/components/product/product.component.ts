@@ -1,17 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ProductosService } from 'src/app/services/productos.service';
 
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent {
+export class ProductComponent implements OnInit {
+  array: any[] = []
+  constructor(private router: Router, private route: ActivatedRoute, public prodServices: ProductosService) { }
 
-  productos = [
-    [1, 'Galleta chokis', 10.00, 15.00, 5, 100.00],
-    [2, 'Mermelada Fresa', 65.00, 80.00, 15, 100.00],
-    [3, 'Aceite', 18.00, 20.00, 2, 100.00],
-    [4, 'Palomita de Maiz', 12.00, 15.00, 3, 100.00],
-    [5, 'Doritos', 5.00, 8.00, 3, 100.00]
-  ]
+  ngOnInit(): void {
+  }
+  editar(id: string) {
+    this.router.navigate(['/detalle', id])
+  }
 }
