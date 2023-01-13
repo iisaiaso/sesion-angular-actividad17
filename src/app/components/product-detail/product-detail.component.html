@@ -1,17 +1,78 @@
 <!-- <p>{{id}}</p> -->
-<div *ngFor="let data of this.prodServices.productos" class="w-2/5 mx-auto bg-red-200 mt-10">
-    <div *ngIf="data[0] == this.id">
-      <div>
-        <p class="text-xl text-center">{{title | uppercase}} {{id}}</p>
-      </div>
-      <div class="inline-block">
-        <label for="cod" class="">Codigo de barras</label>
-        <input type="text" id="cod" value="{{data[0]}}" disabled>
-      </div>
-      <p>{{data[1]}}</p>
-      <p>{{data[2]}}</p>
-      <p>{{data[3]}}</p>
-      <p>{{data[4]}}</p>
-      <p>{{data[5]}}</p>
+<div
+  *ngFor="let data of this.prodServices.productos"
+  class="w-2/5 mx-auto  mt-10"
+>
+  <div *ngIf="data[0] == this.id">
+    <div>
+      <p class="text-xl text-center">{{ title | uppercase }} {{ id }}</p>
     </div>
+    <form class="px-[50px] py-5">
+      <div class="">
+        <label for="cod" class="block text-gray-700 text-sm mb-2">
+          Codigo de barras:
+        </label>
+        <input 
+        type="text" 
+        id="cod" 
+        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 outline-0"
+        value="{{ data[0] }}" />
+      </div>
+      <div class="">
+        <label for="des" class="block text-gray-700 text-sm mb-2">
+          Descripción:
+        </label>
+        <textarea
+        type="text" 
+        id="des" 
+        rows="5"
+        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 "
+        value="{{ data[1] }}"> </textarea>
+      </div>
+      <div class="bg-blue-500 h-1"></div>
+      <div class="">
+        <label for="pVen" class="block text-gray-700 text-sm mb-2">
+          Precio de venta:
+        </label>
+        <input 
+        type="text" 
+        id="pVen" 
+        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 "
+        value="{{ data[2] }}" />
+      </div>
+      <div class="">
+        <label for="pCom" class="block text-gray-700 text-sm mb-2">
+          Precio de Compra:
+        </label>
+        <input 
+        type="text" 
+        id="pCom" 
+        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 "
+        value="{{ data[3] }}" />
+      </div>
+      <div class="">
+        <label for="gan" class="block text-gray-700 text-sm mb-2">
+          Ganancia:
+        </label>
+        <input 
+        type="text" 
+        id="gan" 
+        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 "
+        value="{{ data[4] }}" />
+      </div>
+      <div class="">
+        <label for="exis" class="block text-gray-700 text-sm mb-2">
+         Existencia:
+        </label>
+        <input 
+        type="text" 
+        id="exis" 
+        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 "
+        value="{{ data[5] }}" />
+      </div>
+    </form>
+   <div class="mb-10">
+    <a routerLink="/" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Atras</a>
+   </div>
+  </div>
 </div>
